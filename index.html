@@ -34,10 +34,6 @@
         ballX = ballX + dx;
         ballY = ballY + dy;
         
-        function drawBall(context) {
-        // Move the ball
-        ballX = ballX + dx;
-        ballY = ballY + dy;
 
         // If we've hit the left or right, turn around
         if (ballX > CANVAS_WIDTH || ballX < 0) {
@@ -67,6 +63,12 @@
         context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         drawBall(context);
       }
+      function draw() {
+        var context = pongCanvas.getContext('2d');
+        context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        drawBall(context)
+      }
+
 
       // Redraw the canvas every REFRESH_TIME milliseconds
       setInterval(draw, REFRESH_TIME);
@@ -92,4 +94,3 @@
     <canvas id="pongCanvas" width="500" height="300"></canvas>
   </body>
 </html> 
-
